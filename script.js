@@ -96,13 +96,15 @@ var quizQuestions = [
   },
 ]
 
-function showQuestions() {
-  var questionIndex = 0; 
+function showQuestion(questionIndex) {
+  main.innerHTML="";
   main.setAttribute("id", "question-card");
 
   h1El.textContent = quizQuestions[questionIndex].question;
   main.appendChild(h1El);
+}
 
+function showAnswers(questionIndex) {
   var answers = document.createElement("section");
   answers.setAttribute("id", "answers");
   main.appendChild(answers);
@@ -111,33 +113,37 @@ function showQuestions() {
     var ans = document.createElement("button");
     ans.textContent = quizQuestions[questionIndex].answers[key];
     answers.appendChild(ans);
-  }
 
-  var result = document.createElement("div");
-  result.textContent = "";
-  main.appendChild(result);
+    var result = document.createElement("div");
 
-  var score=0;
-  
-  for (i=0; i<document.getElementById("answers").children.length; i++) {
-    ans.addEventListener("click", function(event) {
-      var buttonText = event.target.textContent;
-
-      if (buttonText == quizQuestions[questionIndex].correctAnswer) {
-        score = score + 1;
-        result.textContent = "Correct!";
-      } else {
-        result.textContent = "Incorrect!";
+    ans.addEventListener('click', function(event) {
+      if (event.target.textContent == quizQuestions[questionIndex].correctAnswer) {
+        result.textContent = "Correct answer!";
+        main.appendChild(result);
+      }
+      else {
+        result.textContent = "Incorrect answer!";
+        main.appendChild(result);
       }
 
-      questionIndex++;
-  })
+      if (questionIndex < quizQuestions.length - 1) {
+        questionIndex++;
+        showQuestion(questionIndex);
+        showAnswers(questionIndex);
+      }
+      else {}
+    })
   }
 }
+
+
 
 // Add function to start quiz
 function startQuiz() {
   startTimer();
-  main.innerHTML = "";
-  showQuestions();
+
+  var questionIndex = 0;
+  showQuestion(questionIndex);
+  showAnswers(questionIndex);
+
 }

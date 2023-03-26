@@ -13,8 +13,11 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-sizing: border-box;
   width: 60%;
   margin: auto;
+  padding: 20px;
+  border: 2.5px solid grey;
 }
 
 #main-container div {
@@ -31,4 +34,29 @@ body {
 
 #main-container button:hover {
   background-color: rgb(184, 16, 184);
+}
+
+#question-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  border: 2.5px solid grey;
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+#answers button {
+  margin: 5px;
+  min-width: 100px;
+  color: white;
+  background-color: purple;
+  border-radius: 5px;
 }

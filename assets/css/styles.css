@@ -43,7 +43,7 @@ body {
   width: 60%;
   margin: auto;
   padding: 20px;
-  border: 2.5px solid grey;
+  /* border: 2.5px solid grey; */
 }
 
 #answers {
@@ -59,4 +59,34 @@ body {
   color: white;
   background-color: purple;
   border-radius: 5px;
+}
+
+#answers button:hover {
+  background-color: rgb(184, 16, 184);
+}
+
+form #initial {
+  width: 100%;
+}
+
+#end-page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 40%;
+  margin: auto;
+  padding: 20px;
+  /* border: 2.5px solid grey; */
+}
+
+#submit, #restart {
+  margin: 5px;
+  min-width: 100px;
+  color: white;
+  background-color: purple;
+  border-radius: 5px;
+}
+
+#submit:hover, #restart:hover {
+  background-color: rgb(184, 16, 184);
 }

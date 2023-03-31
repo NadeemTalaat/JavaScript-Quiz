@@ -82,6 +82,8 @@ form #initial {
 #submit, #restart {
   margin: 5px;
   min-width: 100px;
+  width: 60%;
+  margin: 5px auto;
   color: white;
   background-color: purple;
   border-radius: 5px;
@@ -89,4 +91,23 @@ form #initial {
 
 #submit:hover, #restart:hover {
   background-color: rgb(184, 16, 184);
+}
+
+#score-table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+#score-table tr:nth-child(odd) {
+  background-color: rgb(200, 141, 240);
+}
+
+#score-table tr:nth-child(even){
+  background-color: rgb(157, 69, 216);
+}
+
+#score-table {
+  color: white;
 }

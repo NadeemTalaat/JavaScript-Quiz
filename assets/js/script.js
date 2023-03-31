@@ -61,7 +61,7 @@ start.addEventListener("click", startQuiz);
 
 // Add function to start timer countdown
 function startTimer() {
-  timeLeft = 7500;
+  timeLeft = 75;
   interval = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(interval);
@@ -231,6 +231,7 @@ function showScores() {
   console.log(h1El);
   main.appendChild(h1El);
 
+  table.setAttribute("id", "score-table");
   main.appendChild(table);
 
   userScores = JSON.parse(localStorage.getItem("users"));
@@ -253,7 +254,9 @@ function showScores() {
   button.textContent = "Restart Quiz";
   button.setAttribute("id", "restart");
   main.appendChild(button);
-  button.addEventListener("click", startQuiz);
+  button.addEventListener("click", function () {
+    location.reload();
+  });
 }
 
 // Add function to start quiz

@@ -40,7 +40,7 @@ Once the user enters their initials and clicks the submit button, they are prese
 They can also click the restart quiz button to try again.
 ![INPUT: Use Uppercase Letters?](./assets/images/highscores.png)
 
-Page can alternatively be accessed [here](https://nadeemtalaat.github.io/JavaSript-Quiz/).
+Page can alternatively be accessed [here](https://nadeemtalaat.github.io/JavaScript-Quiz/).
 
 ## Credits
 
